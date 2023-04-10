@@ -1,0 +1,28 @@
+@import "styles/vars.module";
+
+.input {
+  outline: none;
+  border: 1px solid #0A0B08;
+  border-radius: 100px;
+  padding: 16px 32px;
+  background: none;
+  color: $text-color;
+
+  transition: color 400ms, border-color 400ms;
+
+  &::placeholder {
+    color: $text-color;
+    opacity: 0.5;
+
+    transition: color 400ms;
+  }
+
+  &.error {
+    border-color: $danger;
+    color: $danger;
+
+    &::placeholder {
+      color: $danger;
+    }
+  }
+}

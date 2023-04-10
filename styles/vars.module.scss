@@ -1,0 +1,47 @@
+$medium: 1024px;
+$small: 500px;
+
+$accent: #00ff00;
+$text-color: #000000;
+$text-light-color: #FFFFFF;
+$text-secondary: #000000;
+
+$danger: #ff0000;
+
+$active-light-color: #f4f4f4;
+
+$text-color-hover: lighten($text-color, 30);
+$text-light-color-hover: darken($text-light-color, 10);
+
+$navbar-padding: 22px;
+$navbar-height: $navbar-padding * 2 + 46px;
+
+@mixin medium-media {
+  @media only screen and (max-width: $medium) {
+    @content;
+  }
+}
+@mixin small-media {
+  @media only screen and (max-width: $small) {
+    @content;
+  }
+}
+@mixin max-width-media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+
+@mixin hover {
+  @media(hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+:export {
+  medium: $medium;
+  small: $small;
+}

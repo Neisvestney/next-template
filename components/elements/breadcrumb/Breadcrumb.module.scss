@@ -1,0 +1,20 @@
+@import "styles/vars.module";
+
+.breadcrumb {
+  @include small-media {
+    display: flex;
+    justify-content: center;
+  }
+
+  .part {
+    opacity: 0.5;
+
+    span {
+      white-space: pre;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

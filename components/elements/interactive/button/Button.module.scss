@@ -1,0 +1,127 @@
+@import "styles/vars.module";
+
+$variants: (
+        "black": (
+                "text-color": $text-color,
+                "border-color": $text-color,
+                "icon-color": $text-color,
+                "hover-text-color": $text-color-hover,
+                "hover-border-color": $text-color-hover,
+                "hover-icon-color": $text-color-hover,
+                "active-background": $active-light-color,
+                "disabled-text-color": $text-color-hover,
+                "disabled-border-color": $text-color-hover,
+                "disabled-icon-color": $text-color-hover,
+        )
+);
+
+.button {
+  $button: &;
+
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-left: 9px;
+  padding-right: 9px;
+
+  cursor: pointer;
+
+  outline: none;
+  background: none;
+  border-radius: 50px;
+
+  border-style: solid;
+  border-width: 1px;
+
+  transition: border-color 400ms, background-color 400ms, gap 400ms;
+
+  &.text {
+    padding-left: 20px;
+    padding-right: 18px;
+
+    span {
+      font-weight: 700;
+      text-transform: uppercase;
+
+      padding-top: 17px;
+      padding-bottom: 17px;
+
+      transition: color 400ms;
+    }
+  }
+
+  @each $variant-name, $vars in $variants {
+    &.#{$variant-name} {
+      border-color: map-get($vars, "border-color");
+      background: map-get($vars, "background");
+
+      .icon {
+        background-color: map-get($vars, "icon-color");
+      }
+
+      span {
+        color: map-get($vars, "text-color");
+      }
+
+      @include hover {
+        border-color: map-get($vars, "hover-border-color");
+        background: map-get($vars, "hover-background");
+
+        span {
+          color: map-get($vars, "hover-text-color");
+        }
+
+        .icon {
+          background-color: map-get($vars, "hover-icon-color");
+        }
+      }
+
+      &:active {
+        background: map-get($vars, "active-background");
+        border-color: map-get($vars, "active-border-color");
+      }
+
+      &:disabled {
+        background: map-get($vars, "disabled-background");
+        border-color: map-get($vars, "disabled-border-color");
+
+        span {
+          color: map-get($vars, "disabled-text-color");
+        }
+
+        .icon {
+          background-color: map-get($vars, "disabled-icon-color");
+        }
+      }
+    }
+  }
+
+  .icon {
+    transition: background-color 400ms, transform 400ms;
+
+    &.arrow {
+      // mask-image: url("../../../../assets/arrow.svg");
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.left {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+  &.up {
+    .icon {
+      transform: rotate(270deg);
+    }
+  }
+  &.down {
+    .icon {
+      transform: rotate(90deg);
+    }
+  }
+}

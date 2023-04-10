@@ -1,0 +1,40 @@
+@import "styles/vars.module";
+
+.container {
+  padding: 70px 48px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .content {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.text {
+    .content {
+      max-width: 1100px;
+    }
+  }
+
+  &.noPadding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.noTopPadding {
+    padding-top: 0;
+
+    &:first-child:not(.nav) {
+      padding-top: $navbar-height
+    }
+  }
+
+  &:first-child:not(.nav) {
+    padding-top: calc($navbar-height + 18px);
+  }
+
+  @include small-media {
+    padding: 30px 10px;
+  }
+}

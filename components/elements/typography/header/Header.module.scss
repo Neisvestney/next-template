@@ -1,0 +1,65 @@
+@import "styles/vars.module";
+
+.header {
+  margin: 0;
+
+  &.textMargins {
+    margin-bottom: 24px;
+  }
+}
+
+.black {
+  color: $text-color;
+}
+
+.light {
+  color: $text-light-color;
+}
+
+.h1 {
+  font-weight: 700;
+  font-size: 64px;
+  text-transform: uppercase;
+
+  @include small-media {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+.h2 {
+  font-weight: 700;
+  font-size: 40px;
+  text-transform: uppercase;
+
+  @include small-media {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+.h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 160%;
+
+  @include small-media {
+    font-size: 24px;
+  }
+}
+
+.h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.h5 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.h6 {
+  font-weight: 700;
+  font-size: 24px;
+}
