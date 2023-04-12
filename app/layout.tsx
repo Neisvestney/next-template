@@ -1,4 +1,5 @@
-import "../styles/globals.scss"
+import "../styles/globals.scss";
+import "../styles/typography.scss";
 import localFont from "next/font/local";
 import {ReactNode} from "react";
 import VhProvider from "@/components/layout/vhprovider/VhProvider";
