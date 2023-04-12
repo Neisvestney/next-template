@@ -1,0 +1,16 @@
+@import "vars.module";
+
+html {
+  font-size: 16px;
+  @include medium-media {font-size: 15px;}
+  @include small-media  {font-size: 14px;}
+  color: $text-color;
+}
+
+small, .small_text{  // design font-size: 15px
+  font-size: 14px;
+  @include medium-media {font-size: 13px;}
+  @include small-media  {font-size: 12px;}
+}
+
+strong, b{font-weight: 700;}
