@@ -5,6 +5,7 @@ $accent: #00ff00;
 $text-color: #000000;
 $text-light-color: #FFFFFF;
 $text-secondary: #000000;
+$light-gray-color: #DDDDDD;
 
 $danger: #ff0000;
 
@@ -12,6 +13,8 @@ $active-light-color: #f4f4f4;
 
 $text-color-hover: lighten($text-color, 30);
 $text-light-color-hover: darken($text-light-color, 10);
+
+$default-transition-duration: 0.23s;
 
 $navbar-padding: 22px;
 $navbar-height: $navbar-padding * 2 + 46px;
@@ -37,6 +40,28 @@ $navbar-height: $navbar-padding * 2 + 46px;
   @media(hover: hover) and (pointer: fine) {
     &:hover {
       @content;
+    }
+  }
+}
+@mixin focus {
+  &:focus-visible {
+    outline: 3px auto $accent;
+    @content;
+  }
+}
+
+@mixin input_focus{
+  input:focus, textarea:focus{
+    border: 1px solid $accent;
+    outline: none;
+    @content
+  }
+}
+
+@mixin active{
+  &:active{
+    @media (pointer: fine) {
+      @content
     }
   }
 }

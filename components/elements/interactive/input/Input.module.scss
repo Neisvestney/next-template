@@ -2,13 +2,20 @@
 
 .input {
   outline: none;
-  border: 1px solid #0A0B08;
-  border-radius: 100px;
-  padding: 16px 32px;
+  border: 1px solid $light_gray_color;
+  border-radius: 7px;
   background: none;
   color: $text-color;
 
-  transition: color 400ms, border-color 400ms;
+  transition: color $default-transition-duration, border-color $default-transition-duration;
+
+  padding: 1.15em 1.33em;
+
+  ::-webkit-input-placeholder, ::-moz-placeholder{color: $light_gray_color}
+
+  @include hover{border-color: $text-color;}
+  @include active{border-color: $text-color;}
+  @include input_focus{border-color: $text-color;}
 
   &::placeholder {
     color: $text-color;

@@ -37,4 +37,4 @@ next-env.d.ts
 nextjs-routes.d.ts
 
 .vscode
-.env
+.idea/
