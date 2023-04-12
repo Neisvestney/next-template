@@ -15,7 +15,7 @@
 
   @include hover{border-color: $text-color;}
   @include active{border-color: $text-color;}
-  @include input_focus{border-color: $text-color;}
+  @include input-focus {border-color: $text-color;}
 
   &::placeholder {
     color: $text-color;

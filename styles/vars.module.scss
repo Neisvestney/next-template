@@ -50,12 +50,10 @@ $navbar-height: $navbar-padding * 2 + 46px;
   }
 }
 
-@mixin input_focus{
-  input:focus, textarea:focus{
-    border: 1px solid $accent;
-    outline: none;
-    @content
-  }
+@mixin input-focus {
+  border: 1px solid $accent;
+  outline: none;
+  @content
 }
 
 @mixin active{
