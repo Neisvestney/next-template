@@ -58,9 +58,7 @@ $navbar-height: $navbar-padding * 2 + 46px;
 
 @mixin active{
   &:active{
-    @media (pointer: fine) {
-      @content
-    }
+    @content
   }
 }
 
