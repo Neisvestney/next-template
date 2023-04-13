@@ -5,6 +5,8 @@ html {
   @include medium-media {font-size: 15px;}
   @include small-media  {font-size: 14px;}
   color: $text-color;
+
+  *{font-size: inherit}
 }
 
 small, .small_text{  // design font-size: 15px
