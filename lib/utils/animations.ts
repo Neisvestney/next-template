@@ -1,7 +1,7 @@
 import {Variants} from "framer-motion";
 
 export const opacityVariants: Variants = {
-    hidden: {
+    hide: {
         opacity: 0,
     },
     show: {
